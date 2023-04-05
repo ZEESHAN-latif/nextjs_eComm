@@ -1,0 +1,29 @@
+.mainWrapper{
+    width:20%;
+    background-color: #121212;
+    color: #fff;
+    height: 88vh;
+    border: 1px solid #fff;
+}
+.menueItems{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.logoutItem{
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6%;
+}
+
+.sideMenuWrapper{
+    width: 100%;
+    height: 62vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
