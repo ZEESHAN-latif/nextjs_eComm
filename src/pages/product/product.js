@@ -1,36 +1,40 @@
 import React, { useEffect, useState } from 'react'
+import { Card } from "antd";
+const { Meta } = Card;
+import { Images } from "@/utils/Images";
+import Image from "next/image";
 
 export default function Project() {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [data, setData] = useState(null);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [isLoading, setLoading] = useState(false);
   
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      setLoading(true);
-      fetch("https://jsonplaceholder.typicode.com/posts")
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-          setLoading(false);
-        });
-    }, []);
-    if (isLoading) return <p>Loading...</p>;
-    if (!data) return <p>No profile data</p>;
+  const shoesArray = [
+      {id:1, itemName: "blue shoes",price:"$20", country: "Pakistan", url:Images.blueShoes, description:"Awesome item and best quality is our first priority."},
+      {id:2, itemName: "fancy sniker",price:"$50", country: "Pakistan", url:Images.fancySniker ,description:"Awesome item and best quality is our first priority."},
+      {id:3, itemName: "fleet",price:"$20", country: "Pakistan", url:Images.fleet ,description:"Awesome item and best quality is our first priority."},
+      {id:4, itemName: "joger",price:"$20", country: "Pakistan", url:Images.joger ,description:"Awesome item and best quality is our first priority."},
+      {id:5, itemName: "sniker",price:"$20", country: "Pakistan", url:Images.sniker ,description:"Awesome item and best quality is our first priority."},
+  ];
+
   return (
     <div>
-    {data?.map((item) => {
-      return (<>
-        <div>
-          <div style={{margin:20, background:"lightGray", padding:10}}>
-            <h4>{item?.title}</h4>
-            <p>{item?.body}</p>
-          </div>
-        </div>
-        </>
-      );
-    })}
+    {shoesArray?.map((item) => {
+            return <><Card key={item?.id}
+            hoverable
+            style={{
+              width: 240,
+            }}
+            cover={
+              <Image
+                src={item?.url}
+                alt={item?.itemName}
+                height={200}
+                width={200}
+              />
+            }
+          >
+            <Meta title={item?.itemName} description={item?.description} />
+          </Card>
+          </>
+        })}
   </div>
   )
 }
