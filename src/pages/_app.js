@@ -1,11 +1,9 @@
-// This default export is required in a new `pages/_app.js` file.
-import Image from "next/image";
-import Link from "next/link";
 import "../styles/navbar.css";
 import Sidebar from "./sidebar";
 import NavBar from "./navBar";
 import { Provider } from "react-redux";
 import { store } from "@/store";
+import '../styles/main.scss';
 
 export default function MyApp({ Component, pageProps }) {
   return (
