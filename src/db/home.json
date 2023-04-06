@@ -1,0 +1,12 @@
+{
+    "products": [
+      {"id":1,
+        "girlShots": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+        "itemName": "short jeans",
+        "price": "$200" 
+      }
+    ],
+    "shoes": [
+        {"id":1, "itemName": "blue shoes","price":"$20", "country": "Pakistan"}
+    ]
+  }
