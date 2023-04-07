@@ -1,0 +1,16 @@
+.mainHomeWrraper {
+    .homeTableWrapper {
+        display: flex;
+        flex-direction: column;
+
+        .seeAllWrraper {
+            background-color: #cccc;
+            color: #121212;
+            padding: 4px;
+            cursor: pointer;
+            &:hover{
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,22 +1,34 @@
 import Image from "next/image";
 import React from "react";
-import "../styles/sidebar.css";
-import logoImage from '../pages/assets/images/logo.png';
+import style from "../styles/sidebar.module.scss";
+import logoImage from "../pages/assets/images/logo.png";
+import { useMenusList } from "@/utils/useMenue";
+import Link from "next/link";
 
 export default function Sidebar() {
+  const menusList = useMenusList();
+
+  const menuList = menusList ?? [];
   return (
-    <div className="mainWrapper">
-      <div style={{display:"flex", justifyContent:"center"}}>
-       <Image src={logoImage} alt="My Image" width={130} height={130} />
+    <div className={style.mainWrapper}>
+      <div className={style.logoWrraper}>
+        <Image src={logoImage} alt="My Image" width={130} height={130} />
       </div>
-      <div className="sideMenuWrapper">
-        <li className="menueItems">About</li>
-        <li className="menueItems">About</li>
-        <li className="menueItems">About</li>
+      <div className={style.sideMenuWrapper}>
+        {menuList?.map((item) => {
+          const element = item?.menu.map((menueItem, key) => {
+            return (
+              <Link key={key} href={menueItem.link}  passHref legacyBehavior>
+                <a className={style.menueItems}>{menueItem.name}</a>
+              </Link>
+            );
+          });
+          return <>{element}</>;
+        })}
       </div>
       <div>
-        <li className="logoutItem">Logout</li>
-        </div>
+        <li className={style.logoutItem}>Logout</li>
+      </div>
     </div>
   );
 }
