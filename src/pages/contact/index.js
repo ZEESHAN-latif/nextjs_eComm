@@ -6,4 +6,5 @@ export default function index() {
       Contact us via #304-8990998
     </div>
   )
+  
 }

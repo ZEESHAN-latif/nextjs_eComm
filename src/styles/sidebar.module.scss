@@ -5,6 +5,7 @@
     color: #fff;
     height: 92vh;
     border: 1px solid #fff;
+    overflow: auto;
 
     .logoWrraper{
         display: flex;
@@ -32,12 +33,13 @@
         }
     }
     .logoutItem{
-        position: absolute;
-        bottom: 40px;
+        // position: absolute;
+        // bottom: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 6%;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 }
 

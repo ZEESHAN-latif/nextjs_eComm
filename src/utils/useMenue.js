@@ -10,6 +10,11 @@ export const useMenusList = () => {
     setmenuItems([
       {
         menu: [
+
+          {
+            name: "Gallery",
+            link: SidebarRoutes.gallery
+          },
           {
             name: "Term Conditions",
             //   icon: MenuIcon.dashboard,

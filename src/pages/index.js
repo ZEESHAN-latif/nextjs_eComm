@@ -1,10 +1,7 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import { useRouter } from "next/router";
 import Home from "./home";
+import React from 'react';
 // import styles from './page.module.css'
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Index() {
   return (
