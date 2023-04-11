@@ -1,6 +1,7 @@
 import { Table } from "antd";
 import React from "react";
 import { Images } from "@/utils/Images";
+import style from '../styles/home.module.scss'
 const shoesArray = [
   {
     id: 1,
@@ -72,11 +73,11 @@ const columns = [
 ];
 export default function Home() {
   return (
-    <div className={"mainHomeWrraper"}>
-      <div className={'homeTableWrapper'}>
+    <div className={style.mainHomeWrraper}>
+      <div className={style.homeTableWrapper}>
         <Table dataSource={shoesArray} columns={columns} pagination={false} />
         {shoesArray.length > 4 && (
-          <div className={'seeAllWrraper'}>
+          <div className={style.seeAllWrraper}>
             <p>See all Items</p>
           </div>
         )}

@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
     <NavBar />
       <div style={{ display: "flex" }}>
         <Sidebar />
-        <div style={{ width: "80%", height: "88vh", overflow: "scroll" }}>
+        <div style={{ width: "80%", height: "92vh", overflow: "scroll" }}>
           {" "}
           <Component {...pageProps} />{" "}
         </div>
