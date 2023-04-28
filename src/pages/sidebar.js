@@ -23,12 +23,11 @@ export default function Sidebar() {
               </Link>
             );
           });
-          return <>{element}</>;
+          return <>{element}
+          </>;
         })}
       </div>
-      <div>
-        <li className={style.logoutItem}>Logout</li>
-      </div>
+      <a className={style.logoutItem}>Logout</a>
     </div>
   );
 }

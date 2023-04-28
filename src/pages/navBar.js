@@ -24,7 +24,7 @@ export default function NavBar() {
           <Link className="menueItem" href="/about">
             About
           </Link>
-          <Link className="menueItem" href="/">
+          <Link className="menueItem" href="/contact">
             Contact Us
           </Link>
         </div>

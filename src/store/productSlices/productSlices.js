@@ -25,6 +25,7 @@ const productsSlice = createSlice({
 
 export const { fetchUsersStart, fetchUsersSuccess, fetchUsersFailure } = productsSlice.actions;
 
+// eslint-disable-next-line no-unused-vars
 export const fetchProducts = () => async (dispatch, getState) => {
   dispatch(fetchUsersStart());
   try {

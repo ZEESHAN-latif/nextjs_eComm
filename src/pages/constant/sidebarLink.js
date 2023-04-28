@@ -4,4 +4,5 @@ export const SidebarRoutes = {
     ourServices: '/',
     companyPartners: '/',
     customersport: '/',
+    gallery:'gallery'
 }
