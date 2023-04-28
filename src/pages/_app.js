@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
     <NavBar />
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", background:"#eeee" }}>
         <Sidebar />
         <div style={{ width: "80%", height: "92vh", overflow: "scroll" }}>
           {" "}

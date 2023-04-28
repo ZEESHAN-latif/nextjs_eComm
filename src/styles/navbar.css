@@ -27,6 +27,10 @@
     margin-left: auto;
 }
 
+.menueItem:hover{
+    font-weight: bolder;
+}
+
 .cartWrapper{
     width: 10%;
     display: flex;

@@ -1,49 +1,7 @@
 import { Table } from "antd";
 import React from "react";
-import { Images } from "@/utils/Images";
 import style from '../styles/home.module.scss'
-const shoesArray = [
-  {
-    id: 1,
-    itemName: "blue shoes",
-    price: "$20",
-    country: "Pakistan",
-    url: Images.blueShoes,
-    description: "Awesome item and best quality is our first priority.",
-  },
-  {
-    id: 2,
-    itemName: "fancy sniker",
-    price: "$50",
-    country: "Pakistan",
-    url: Images.fancySniker,
-    description: "Awesome item and best quality is our first priority.",
-  },
-  {
-    id: 3,
-    itemName: "fleet",
-    price: "$20",
-    country: "Pakistan",
-    url: Images.fleet,
-    description: "Awesome item and best quality is our first priority.",
-  },
-  {
-    id: 4,
-    itemName: "joger",
-    price: "$20",
-    country: "Pakistan",
-    url: Images.joger,
-    description: "Awesome item and best quality is our first priority.",
-  },
-  {
-    id: 5,
-    itemName: "sniker",
-    price: "$20",
-    country: "Pakistan",
-    url: Images.sniker,
-    description: "Awesome item and best quality is our first priority.",
-  },
-];
+import { useRouter } from "next/router";
 
 const columns = [
   {
@@ -71,13 +29,14 @@ const columns = [
     render: (_, data) => <div>{data?.price}</div>,
   },
 ];
-export default function Home() {
+export default function Home({...props}) {
+  const router = useRouter();
   return (
     <div className={style.mainHomeWrraper}>
       <div className={style.homeTableWrapper}>
-        <Table dataSource={shoesArray} columns={columns} pagination={false} />
-        {shoesArray.length > 4 && (
-          <div className={style.seeAllWrraper}>
+        <Table dataSource={props?.tableData} columns={columns} pagination={false} />
+        {props?.tableData.length > 4 && (
+          <div className={style.seeAllWrraper} onClick={() => router.push(props?.navigation)}>
             <p>See all Items</p>
           </div>
         )}

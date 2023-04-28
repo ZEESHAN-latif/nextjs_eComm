@@ -1,9 +1,13 @@
-import { Card, Col, Row } from "antd";
+import { Button, Card, Col, Row } from "antd";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import ProductDetailModal from "./productDetailModal";
 
 export default function index({data}) {
     console.log(data);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState({});
   return (
     <div>
       <Row>
@@ -17,11 +21,16 @@ export default function index({data}) {
                 <p>Description: {item?.description}</p>
                 
                 <img style={{width:'100%'}} src={item?.images[1]} alt={item?.thumbnail}/>
+                <Button type='primary' onClick={() => {
+                  setIsModalOpen(true);
+                  setModalData(item);
+                  }}>View Product</Button>
               </Card>
             </Col>
           );
         })}
       </Row>
+      <ProductDetailModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} data={modalData}/>
     </div>
   );
 }
