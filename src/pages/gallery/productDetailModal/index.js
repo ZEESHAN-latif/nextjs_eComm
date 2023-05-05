@@ -19,7 +19,7 @@ const ProductDetailModal = ({isModalOpen, setIsModalOpen, data}) => {
                 <p>Stock: {data?.stock}</p>
                 <p>Description: {data?.description}</p>
                 
-                <ImgWrraper> <img style={{width:'50%', height:'50%',}} src={data?.images[0]} alt={data?.thumbnail}/></ImgWrraper>
+                <ImgWrraper> <img style={{width:'50%', height:'50%',}} src={data?.images} alt={data?.thumbnail}/></ImgWrraper>
                 <Button type='primary'>Add Product to Cart</Button>
               </Card>
       </Modal>
