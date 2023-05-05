@@ -49,13 +49,16 @@
   }
 
   .signUpBtn {
-    background-color: #00b840;
+    background-color: #121212;
     width: 100%;
     color: #fff;
     height: 45px;
     margin-top: 22px;
     font-size: 20px;
     font-weight: 500;
+    &:hover{
+        color: #fff;
+    }
   }
   .loginWrraper {
     display: flex;
@@ -70,8 +73,12 @@
     }
 
     span {
-        color: #00B840;
+        color: blue;
         margin-left: 4px;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 }

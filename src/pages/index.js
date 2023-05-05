@@ -1,16 +1,32 @@
 import { Button, Checkbox, Form, Input, Select } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 import style from "../styles/index.module.scss";
 import Eye from "../assets/icons/Eye.png";
 import EyeOff from "../assets/icons/EyeOff.png";
 import Image from "next/image";
+import { registerUser } from "@/store/productSlices/productSlices";
+import { useDispatch } from "react-redux";
 
 const Index = () => {
+  const dispatch = useDispatch();
   const [signUpForm] = Form.useForm();
   const onFormSubmit = async (values) => {
   console.log(values);
+  const data = {
+    name: values.name,
+    password: values.password,
+    address:values.address,
+    email:values.email,
+    contact:values.phone
+  }
+
+  dispatch(registerUser(data))
   };
 
+  // useEffect(() => {
+  //   dispatch(fetchProducts());
+
+  // }, []);
 
   return (
     <div className={style.mainContainer}>
@@ -132,7 +148,7 @@ const Index = () => {
           <div className={style.loginWrraper}>
             <p>Already have an account?</p>
             <span
-              style={{ cursor: "pointer" }}
+              
               // onClick={() => navigate(constRoute?.login)}
             >
               Log In
