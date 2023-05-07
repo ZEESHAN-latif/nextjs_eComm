@@ -3,13 +3,13 @@
   justify-content: center;
   //   text-align: center;
   align-items: center;
-  padding: 50px 10px;
+  padding: 51px 10px;
   margin: auto;
   align-items: center;
   border: 1px solid;
 
   .welcomeWrraper {
-    max-width: 500px;
+    max-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,15 +47,24 @@
       font-size: 15px;
     }
   }
+  .checkBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 
   .signUpBtn {
-    background-color: #00b840;
+    background-color: #121212;
     width: 100%;
     color: #fff;
     height: 45px;
     margin-top: 22px;
     font-size: 20px;
     font-weight: 500;
+    &:hover{
+        color: #fff;
+    }
   }
   .loginWrraper {
     display: flex;
@@ -70,8 +79,12 @@
     }
 
     span {
-        color: #00B840;
+        color: blue;
         margin-left: 4px;
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 }
 }
