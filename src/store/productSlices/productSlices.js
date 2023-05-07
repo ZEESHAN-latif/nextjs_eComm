@@ -72,16 +72,9 @@ export const registerUser = (payload) => async (dispatch, getState) => {
 
     const response = await fetch("http://192.168.100.193:5000/api/register", options);
     // const data = await response.json();
-    console.log("++++++++++++++++++++++", response);
     dispatch(registerSuccess());
   } catch (error) {
     dispatch(registerFailure());
   }
 };
-
-// export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-//     const response = await axios.get('/api/users');
-//     return response.data;
-//   });
-
 export default productsSlice.reducer;

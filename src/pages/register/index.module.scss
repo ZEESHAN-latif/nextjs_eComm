@@ -9,7 +9,7 @@
   border: 1px solid;
 
   .welcomeWrraper {
-    max-width: 500px;
+    max-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,6 +46,12 @@
     label {
       font-size: 15px;
     }
+  }
+  .checkBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
   .signUpBtn {
