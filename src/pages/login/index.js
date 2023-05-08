@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import style from "./style.module.scss"; 
 import Eye from "../../assets/icons/Eye.png";
 import EyeOff from "../../assets/icons/EyeOff.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Image from "next/image";
 import { loginUser } from "@/store/productSlices/productSlices";
 import { useDispatch } from "react-redux";
@@ -11,6 +13,7 @@ import { useRouter } from "next/router";
 
 const Login = () => {
   const router = useRouter();
+  const notify = () => toast("Please provide a valid email address and password");
   const dispatch = useDispatch();
   const [loginForm] = Form.useForm();
   const onFormSubmit = async (values) => {
@@ -28,10 +31,10 @@ const Login = () => {
       <div>
         <div className={style.welcomeWrraper}>
           <img
-            src="https://banner2.cleanpng.com/20180401/ykq/kisspng-shopping-cart-computer-icons-online-shopping-clip-online-shop-5ac11205d8e469.5194885815226025018884.jpg"
+            src="https://icms-image.slatic.net/images/ims-web/3ae67ef5-e5f6-42c3-9a40-993ef9a7bfae.png"
             alt="dsf"
           />
-          <h2>Create Your Account</h2>
+          <h2>Welcome Back</h2>
   
         </div>
         <Form
@@ -109,10 +112,12 @@ const Login = () => {
               <Button
                 htmlType="submit"
                 className={style.signUpBtn}
+                onClick={notify}
               >
                 Login
                 {/* {(isLoadingEmailVerification && <Spin />) || "Sign Up"} */}
               </Button>
+              <ToastContainer />
             </Form>
           </div>
           <div className={style.loginWrraper}>

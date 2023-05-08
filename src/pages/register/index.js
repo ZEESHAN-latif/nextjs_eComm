@@ -14,7 +14,6 @@ const Register = () => {
   const dispatch = useDispatch();
   const [signUpForm] = Form.useForm();
   const onFormSubmit = async (values) => {
-  console.log(values);
   const data = {
     name: values.name,
     password: values.password,
@@ -31,7 +30,7 @@ const Register = () => {
       <div>
         <div className={style.welcomeWrraper}>
           <img
-            src="https://banner2.cleanpng.com/20180401/ykq/kisspng-shopping-cart-computer-icons-online-shopping-clip-online-shop-5ac11205d8e469.5194885815226025018884.jpg"
+            src="https://icms-image.slatic.net/images/ims-web/3ae67ef5-e5f6-42c3-9a40-993ef9a7bfae.png"
             alt="dsf"
           />
           <h2>Create Your Account</h2>
