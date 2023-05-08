@@ -1,0 +1,1 @@
+export const baseUrl = 'https://firstrestapi-production.up.railway.app/api'
