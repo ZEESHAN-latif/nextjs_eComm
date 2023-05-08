@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   registerLoading: false,
+  loginLoading: false,
   data: [],
   error: null,
 };
@@ -32,6 +33,18 @@ const productsSlice = createSlice({
     registerFailure: (state) => {
       state.registerLoading = false;
     },
+
+    //Login functions
+    loginStart: (state) => {
+      state.loginLoading = true;
+    },
+    loginSuccess: (state, action) => {
+      state.loginLoading = false;
+      // Login.users = action.payload;
+    },
+    loginFailure: (state) => {
+      state.loginLoading = false;
+    },
   },
 });
 
@@ -42,6 +55,9 @@ export const {
   registerStart,
   registerSuccess,
   registerFailure,
+  loginStart,
+  loginSuccess,
+  loginFailure,
 } = productsSlice.actions;
 
 // eslint-disable-next-line no-unused-vars
@@ -63,18 +79,37 @@ export const registerUser = (payload) => async (dispatch, getState) => {
   dispatch(registerStart());
   try {
     const options = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     };
 
-    const response = await fetch("http://192.168.100.193:5000/api/register", options);
+    const response = await fetch(
+      "http://192.168.100.193:5000/api/register",
+      options
+    );
     // const data = await response.json();
     dispatch(registerSuccess());
   } catch (error) {
     dispatch(registerFailure());
   }
 };
+
+export const loginUser = (payload) => async (dispatch, getState) => {
+  dispatch(loginStart());
+  try {
+    axios.post("http://192.168.100.193:5000/api/login", {payload})
+    .then((response) => {
+      console.log(response);
+    });
+
+    // const data = await response.json();
+    dispatch(loginSuccess());
+  } catch (error) {
+    dispatch(loginFailure());
+  }
+};
+
 export default productsSlice.reducer;
