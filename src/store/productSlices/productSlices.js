@@ -1,3 +1,4 @@
+import { baseUrl } from "@/utils/baseUrl";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -86,10 +87,7 @@ export const registerUser = (payload) => async (dispatch, getState) => {
       body: JSON.stringify(payload),
     };
 
-    const response = await fetch(
-      "http://192.168.100.193:5000/api/register",
-      options
-    );
+    const response = await fetch(`${baseUrl}/register`, options);
     // const data = await response.json();
     dispatch(registerSuccess());
   } catch (error) {
